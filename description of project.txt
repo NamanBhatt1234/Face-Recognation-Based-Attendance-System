@@ -1,0 +1,4 @@
+--->Image Processing
+1.OpenCv
+2.haar cascade algorithm(face detection)
+3.lbph algorithm
