@@ -10,7 +10,7 @@ import numpy as np
 class train_dataset:
     def train_classifier():
         #___________________TO access data of data directory_____________
-        dataset_dir=("Data")
+        dataset_dir=("data")
         #_________________list containg data from directory________________
         path=[os.path.join(dataset_dir,file) for file in os.listdir(dataset_dir)]
  
