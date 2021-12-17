@@ -45,24 +45,24 @@ class Face_Recognition:
                 id,predict=clf.predict(gray_image[y:y+h,x:x+w])
                 confidence=int((100*(1-predict/300)))
 
-                con=mysql.connector.connect(host="localhost",user="root",password="",database="student_data")
+                con=mysql.connector.connect(host="localhost",user="root",password="1234",database="student_data")
                 #The MySQLCursor class instantiates objects that can execute operations such as SQL statements. Cursor objects interact with the MySQL server using a MySQLConnection object.
                 database_access=con.cursor()
 
-                database_access.execute("select `Name` from `students` where `student_id`="+str(id))
+                database_access.execute("select Name from students where student_id="+str(id))
                 n=database_access.fetchone()
                 n="+".join(n)
                 
 
-                database_access.execute("select `Roll` from `students` where `student_id`="+str(id))
+                database_access.execute("select Roll from students where student_id="+str(id))
                 r=database_access.fetchone()
                 r="+".join(r)
 
-                database_access.execute("select `Dep` from `students` where `student_id`="+str(id))
+                database_access.execute("select Dep from students where student_id="+str(id))
                 d=database_access.fetchone()
                 d="+".join(d)
 
-                database_access.execute("select `student_id` from `students` where `student_id`="+str(id))
+                database_access.execute("select student_id from students where student_id="+str(id))
                 i=database_access.fetchone()
                 i="+".join(i)
 
