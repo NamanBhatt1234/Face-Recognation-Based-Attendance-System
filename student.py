@@ -302,7 +302,7 @@ class student_window:
                     con=mysql.connector.connect(host="localhost",user="root",password="1234",database="student_data")
                     #The MySQLCursor class instantiates objects that can execute operations such as SQL statements. Cursor objects interact with the MySQL server using a MySQLConnection object.
                     database_access=con.cursor()
-                    database_access.execute("update students set `Dep`=%s,`course`=%s,`Year`=%s,`Semester`=%s,`Name`=%s,`Division`=%s,`Roll`=%s,`Gender`=%s,`Dob`=%s,`Email`=%s,`Phone`=%s,`PhotoSample`=%s where `student_id`=%s",
+                    database_access.execute("update students set Dep=%s,course=%s,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,PhotoSample=%s where student_id=%s",
                                                (
                                                 self.var_dep.get(),
                                                 self.var_course.get(),
