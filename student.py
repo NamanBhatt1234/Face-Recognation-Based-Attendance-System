@@ -468,19 +468,18 @@ class student_window:
                     ret,my_frame=cam_capture.read()
                     if face_cropping(my_frame) is not None:
                         img_id+=1
-                    face=cv2.resize(face_cropping(my_frame),(450,450))
-                    face=cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
-                    #image file names
-                    file_name_path="data/user."+str(id)+"."+str(img_id)+".jpg"
-                    cv2.imwrite(file_name_path,face)
-                    cv2.putText(face,str(img_id),(50,50),cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
-                    cv2.imshow("Cropped Face",face)
+                        face=cv2.resize(face_cropping(my_frame),(450,450))
+                        face=cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
+                        #image file names
+                        file_name_path="data/user."+str(id)+"."+str(img_id)+".jpg"
+                        cv2.imwrite(file_name_path,face)
+                        cv2.putText(face,str(img_id),(50,50),cv2.FONT_HERSHEY_COMPLEX,1,(0,255,0),2)
+                        cv2.imshow("Cropped Face",face)
 
                     if cv2.waitKey(1)==13 or int(img_id)==100:
                         break
                 cam_capture.release()  
                 cv2.destroyAllWindows()
-                
                 messagebox.showinfo("Result","Generating data sets completed!!!!")
             except Exception as es:
                 messagebox.showerror("Error",f"Due To:{str(es)}",parent=self.root)
