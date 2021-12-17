@@ -466,7 +466,8 @@ class student_window:
                 img_id=0 #This determines number of samples to be taken
                 while True:
                     ret,my_frame=cam_capture.read()
-                    img_id+=1
+                    if face_cropping(my_frame) is not None:
+                        img_id+=1
                     face=cv2.resize(face_cropping(my_frame),(450,450))
                     face=cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
                     #image file names
